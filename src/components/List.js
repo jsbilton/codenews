@@ -1,5 +1,4 @@
 const h = require('react-hyperscript')
-const React = require('react')
 
 const ListItem = require('./ListItem')
 
