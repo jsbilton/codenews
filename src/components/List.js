@@ -1,12 +1,12 @@
 const h = require('react-hyperscript')
+const React = require('react')
 
-module.exports = ({items}) => h('section.list', [h('ul', items.map(item => h('li', [
-        h('a', {
-            href: item.link
-        }, item.title),
-        h('button', 'Up'),
-        h('button', 'Down'),
-        h('span', item.score)
-    ])
+const ListItem = require('./ListItem')
+
+// this is a stateless function
+const List = props => h('section.list', [
+  h('ul', props.items.map(item=>
+   h(ListItem, { item, onScoreChange: props.onScoreChange })
   ))
 ])
+module.exports = List
