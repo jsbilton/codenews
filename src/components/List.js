@@ -4,7 +4,7 @@ const ListItem = require('./ListItem')
 
 // this is a stateless function
 const List = props => h('section.list', [
-  h('ul', props.items.map(item=>
+  h('ul.list', props.items.map(item=>
    h(ListItem, { item, onScoreChange: props.onScoreChange })
   ))
 ])

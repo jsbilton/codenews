@@ -18,16 +18,20 @@ const Form = require('./components/Form.js')
 module.exports = React.createClass({
   getInitialState: _ => ({items}),
   scoreChanged: function (item) {
+    this.setState({ items: this.state.items })
     this.setState({items})
   },
   addNewsItem: function (newItem) {
+    newItem.id =
+      this.state.items.length + 1
+
     this.setState({
       items: this.state
         .items.concat([newItem])
     })
   },
   render() {
-    return h('div.pa4.bg-blue.vh-100', [
+    return h('div.pa4.bg-dark-gray.vh-100', [
      h(Header, { title: "My Code News!"}),
      h('main', [
        h(List, {
